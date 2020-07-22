@@ -18,7 +18,7 @@ export class PlacesTypesService {
     const placeType = await this.placesTypesRepository.findOneOrFail(id);
 
     if (!placeType.isActive) {
-      throw new Error('Não encontrado!');
+      throw new Error('Local não encontrado!');
     }
 
     return placeType;
@@ -27,5 +27,16 @@ export class PlacesTypesService {
   async create({ id, nome, isActive = true }): Promise<PlacesTypes> {
     const placesType = await this.placesTypesRepository.create({ id, nome, isActive });
     return await this.placesTypesRepository.save(placesType);
+  }
+
+  async update(id: string, { nome, isActive = true }): Promise<PlacesTypes> {
+    const placeType = await this.placesTypesRepository.findOneOrFail(id);
+    return await this.placesTypesRepository.save({ ...placeType, nome, isActive });
+  }
+
+  async delete(id: string): Promise<boolean> {
+    const placeType = await this.placesTypesRepository.findOneOrFail(id);
+    await this.placesTypesRepository.save({ ...placeType, isActive: false });
+    return true;
   }
 }
