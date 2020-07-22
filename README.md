@@ -4,4 +4,19 @@
 
 ## Processo de criação
 
-      nest new api
+- É importante que nesse ponto, tanto o nest quanto o typeorm estejam instalados globalmente.
+
+            nest new api
+            yarn add @nestjs/typeorm typeorm mysql
+
+### Controllers:
+
+            nest g controller (nomeDaEntidade)
+
+### Services / Providers:
+
+            nest g service (nomeDaEntidade)
+
+### Modules:
+
+            nest g module (nomeDaEntidade)

@@ -1,3 +1,6 @@
+# DB config
+ormconfig.json
+
 # compiled output
 /dist
 /node_modules
