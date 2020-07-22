@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn  } from 'typeorm';
+import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn, OneToMany  } from 'typeorm';
+import { PlacesDetails } from './places-details.entity';
 
 @Entity()
 export class PlacesTypes {
@@ -8,8 +9,8 @@ export class PlacesTypes {
   @Column()
   nome: string;
 
-  // @Column("text")
-  // nome: string;
+  @OneToMany(type => PlacesDetails, placeDetails => placeDetails.tipo)
+  locais: PlacesDetails[] 
 
   @Column({ name: 'is_active', default: true })
   isActive: boolean;

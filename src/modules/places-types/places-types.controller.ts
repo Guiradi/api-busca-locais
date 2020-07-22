@@ -1,6 +1,6 @@
 import { BadRequestException, Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { PlacesTypesService } from "./places-types.service";
-import { PlacesTypes } from "./places-types.entity";
+import { PlacesTypes } from "../../entities/places-types.entity";
 import { CreatePlaceTypeDto } from './dto/create-place-type.dto';
 import { UpdatePlaceTypeDto } from './dto/update-place-type.dto';
 
