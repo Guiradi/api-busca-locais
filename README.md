@@ -9,14 +9,14 @@
             nest new api
             yarn add @nestjs/typeorm typeorm mysql
 
-### Controllers:
+  ### Controllers:
 
             nest g controller (nomeDaEntidade)
 
-### Services / Providers:
+  ### Services / Providers:
 
             nest g service (nomeDaEntidade)
 
-### Modules:
+  ### Modules:
 
             nest g module (nomeDaEntidade)
