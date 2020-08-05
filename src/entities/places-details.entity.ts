@@ -24,7 +24,7 @@ export class PlacesDetails {
   @ManyToOne(type => PlacesTypes, placeType => placeType.locais)
   tipo: PlacesTypes;
 
-  @Column({ name: "raw_data" })
+  @Column({ name: "raw_data", type: "text" })
   rawInformations: string;
 
   @Column({ name: 'is_active', default: true })
