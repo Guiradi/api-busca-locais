@@ -64,12 +64,12 @@ export class PlacesDetailsService {
         url,
         method: 'get',
         params: {
-        key: process.env.GOOGLE_API_KEY,
-        location,
-        radius,
-        type,
-        pagetoken,
-      },
+          key: process.env.GOOGLE_API_KEY,
+          location,
+          radius,
+          type,
+          pagetoken,
+        },
       })
 
       const placesIds = results.map(({ place_id }) => place_id)
